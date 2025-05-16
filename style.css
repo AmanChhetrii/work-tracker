@@ -1,0 +1,121 @@
+/* Default styles for buttons */
+.change-color-button {
+    cursor: pointer;
+}
+
+/* Animation keyframes */
+@keyframes changeColor {
+    0% {
+        background-color: inherit; 
+        transform: scale(1);
+        box-shadow: none;
+    }
+    50% {
+        background-color: rgba(96, 165, 250, 0.99); 
+        transform: scale(1.02); 
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
+    }
+    100% {
+        background-color: rgba(96, 165, 250, 0.99); 
+        transform: scale(1);
+        box-shadow: none;
+    }
+}
+
+/* Apply animation on button click */
+.change-color-button.clicked {
+    animation: changeColor 0.4s ease; 
+}
+
+/* CSS for cancel button  */
+
+@keyframes changeColorCancel {
+    0% {
+        transform: scale(1);
+        /* box-shadow: none; */
+    }
+    50% {
+        transform: scale(1.12); 
+        transform: rotateY(90deg);
+        /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); */
+    }
+    100% {
+        transform: scale(1);
+        transform: rotateY(180deg);
+        /* box-shadow: none; */
+    }
+}
+
+/* Apply animation on button click */
+.change-color-button.cancel {
+    color: #CD5C5C;
+    animation: changeColorCancel 0.4s ease; 
+}
+
+/* css for notification */
+.notification {
+
+    transition: opacity 0.5s ease, transform 0.3s ease;
+}
+
+/* Hidden state */
+.notification.hidden {
+    opacity: 0;
+    /* transform: translateY(-500px); */
+}
+/* css for radio button  */
+    .custom-radio {
+        --ring-width: 3px; /* Adjust the ring width as needed */
+        --ring-color: #677385; /* Adjust the ring color as needed */
+
+        width: 1.15rem;
+        height: 1.15rem;
+        padding: 3px;
+        appearance: var(--ring-color);
+        background-color: #c6c6c6;
+        border: 3px solid rgba(74, 85, 104, 0.9);
+        border-radius: 9999px; /* Use a large value for a circle */
+        outline: none;
+        transition: box-shadow 0.2s ease-in-out;
+    }
+    .custom-radio:focus {
+        /* outline: none; */
+        box-shadow: 0 0 0 var(--ring-width) var(--ring-color);
+    }
+    
+        /* outline: none; */
+        .custom-radio:checked {
+            background-color: #718096; /* Gray background color when checked */
+            border-color: #4A5568; /* Darker gray border color when checked */
+            box-shadow: 0 0 0 3px #4A5568; /* Darker gray box shadow when checked */
+        }
+        
+/* animation for adding gifs */
+@keyframes fadeOut {
+    0%{
+        display: none;
+        opacity: 0;
+    }
+    1% {
+        display: flex;
+        opacity:1;
+        }
+    100% {
+       display: none;
+       opacity: 0;
+    }
+  }
+.gifFadeOut{animation: fadeOut 3s ease-in-out;}
+
+/* animation for deleting task from remaining tasks */
+@keyframes fadeout {
+    0%{
+        opacity: 1;
+    }
+    100% {
+       display: none;
+       opacity: 0;
+    }
+  }
+.fadeout{animation: fadeout 0.5s ease-in-out;}
+
